@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+    clap_api:
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        ports:
+            - 8002:8000
+        restart: always
+        volumes:
+            # volume for app data
+            - ./app:/workspace/app
+            # volume for model
+            - ./clap-data:/clap-data
